@@ -1,0 +1,109 @@
+﻿@model rojgar.Models.Job
+
+@{
+    ViewData["Title"] = "EditJob";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>EditJob</h1>
+
+<h4>Job</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditJob" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="JobId" />
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label">Category</label>
+                <select asp-for="CategoryId" class="form-control" required>
+                    <option value="">
+                        -- Select --
+                    </option>
+                    @if (ViewBag.Categories != null)
+                    {
+                        foreach (var item in ViewBag.Categories)
+                        {
+                            <option value="@item.Id">
+                                @item.Name
+                            </option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobName" class="control-label">Job Title</label>
+                <input asp-for="JobName" class="form-control" placeholder="Job Title" />
+                <span asp-validation-for="JobName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobDepartment" class="control-label">Job Department</label>
+                <input asp-for="JobDepartment" class="form-control" placeholder="Job Department" />
+                <span asp-validation-for="JobDepartment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdvtNumber" class="control-label">Advt Number</label>
+                <input asp-for="AdvtNumber" class="form-control" placeholder="Advt Number" />
+                <span asp-validation-for="AdvtNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobPublishDate" class="control-label">Job Publish Date</label>
+                <input asp-for="JobPublishDate" class="form-control" placeholder="Job Publish Date" />
+                <span asp-validation-for="JobPublishDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobStartDate" class="control-label">Job Start Date</label>
+                <input asp-for="JobStartDate" class="form-control" placeholder="Job Start Date" />
+                <span asp-validation-for="JobStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobEndDate" class="control-label">Job End Date</label>
+                <input asp-for="JobEndDate" class="form-control" placeholder="Job End Date" />
+                <span asp-validation-for="JobEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobDescription" class="control-label">Job Description</label>
+                <textarea asp-for="JobDescription" class="form-control" placeholder="Job Description"></textarea>
+                <span asp-validation-for="JobDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QualificationLevel" class="control-label">Higher Qualification</label>
+                <select asp-for="QualificationLevel" class="form-control" required>
+                    <option value="">
+                        -- Select --
+                    </option>
+                    <option value="10th">
+                        10th
+                    </option>
+                    <option value="12th">
+                        12th
+                    </option>
+                    <option value="BA">
+                        BA
+                    </option>
+                </select>
+                <span asp-validation-for="QualificationLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobPdf" class="control-label"></label>
+                <input type="file" asp-for="JobPdf" class="form-control" />
+                <span asp-validation-for="JobPdf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Jobs">Back to List</a>
+</div>
+
+
+@section Scripts{
+    <script>
+        highlightMenuItem("Manage", "Jobs");
+    </script>
+}

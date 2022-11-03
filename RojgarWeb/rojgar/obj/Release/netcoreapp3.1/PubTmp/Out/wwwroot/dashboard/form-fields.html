@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Vigyan Dhara | Form Fields</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="components/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="components/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/AdminLTE.css">
+  <link rel="stylesheet" href="assets/css/allskin.css">
+  <link rel="stylesheet" href="https://rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/css/bootstrap-datetimepicker.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <header class="main-header">
+      <nav class="navbar navbar-static-top">
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="assets/images/user.jpg" class="user-image" alt="User Image">
+                <span class="hidden-xs">Username</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="user-footer">
+                    <a href="profile.html" class="btn btn-default"><i class="fa fa-user"></i>My Profile</a>
+                    <a href="profile.html#changepassword" class="btn btn-default"><i class="fa fa-key"></i>Change Password</a>
+                    <a href="#" class="btn btn-default"><i class="fa fa-power-off text-red"></i>Sign out</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <aside class="main-sidebar">
+      <section class="sidebar">
+        <a href="#" class="logo">
+          <span class="logo-mini"><img src="assets/images/vigyandhara-logo-mini.png"></span>
+          <span class="logo-lg"><img src="assets/images/vigyandhara-logo.png"></span>
+        </a>
+        <ul class="sidebar-menu" data-widget="tree">
+          <li class="header">MAIN NAVIGATION</li>
+          <li>
+            <a href="index.html">
+              <i class="fa fa-home"></i> <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="users.html">
+              <i class="fa fa-user"></i> <span>Users</span>
+            </a>
+          </li>
+          <li>
+            <a href="enquiry.html">
+              <i class="fa fa-phone"></i> <span>Enquiry</span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="follow-up.html">
+              <i class="fa fa-arrow-up"></i> <span>Follow Up</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="follow-up.html"><i class="fa fa-circle-o"></i>Follow Up Details</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="staff.html">
+              <i class="fa fa-users"></i> <span>Staff</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="staff.html"><i class="fa fa-circle-o"></i>Staff Members</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="admissions.html">
+              <i class="fa fa-university"></i> <span>Admissions</span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="fees.html">
+              <i class="fa fa-money"></i> <span>Fees</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="fees.html"><i class="fa fa-circle-o"></i>Fees Details</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="profile.html">
+              <i class="fa fa-wpforms"></i> <span>Test</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="profile.html"><i class="fa fa-circle-o"></i>User Profile</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="salary.html">
+              <i class="fa fa-credit-card"></i> <span>Salary</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="salary.html"><i class="fa fa-circle-o"></i>Salary Details</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="profile.html">
+              <i class="fa fa-gear"></i> <span>Settings</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="profile.html"><i class="fa fa-circle-o"></i>User Profile</a></li>
+            </ul>
+          </li>
+          <li class="active">
+            <a href="form-fields.html">
+              <i class="fa fa-wpforms"></i> <span>Form Fields</span>
+            </a>
+          </li>
+          <li>
+            <a href="custom-html-editor.html">
+              <i class="fa fa-gear"></i> <span>Custom HTML Editor</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <div class="sidebar-footer">
+          <a style="text-align:center; width:100%" href="" class="link" data-toggle="tooltip" title="" data-original-title="Sign out"><i class="fa fa-power-off"></i></a>
+      </div>
+    </aside>
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>Form Fields</h1>
+      <ol class="breadcrumb">
+        <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Forms Fields</li>
+      </ol>
+    </section>
+    <section class="content">
+      <div class="box">
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Single Select</label>
+                <select class="form-control select2" style="width: 100%;">
+                  <option selected="selected">Alabama</option>
+                  <option>Alaska</option>
+                  <option>California</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Multiple Select</label>
+                <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                        style="width: 100%;">
+                  <option>Alabama</option>
+                  <option>Alaska</option>
+                  <option>California</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Phone:</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-phone"></i>
+                  </div>
+                  <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Pick a Date:</label>
+                <div class="input-group date">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="datepicker">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Pick a Date range:</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="daterange">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Date and time range:</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-clock-o"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="timerange">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+               <div class="form-group has-success">
+                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Input with success</label>
+                  <input type="text" class="form-control" id="inputSuccess" placeholder="Enter ...">
+                  <span class="help-block">Help block with success</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group has-warning">
+                  <label class="control-label" for="inputWarning"><i class="fa fa-bell-o"></i> Input with
+                    warning</label>
+                  <input type="text" class="form-control" id="inputWarning" placeholder="Enter ...">
+                  <span class="help-block">Help block with warning</span>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group has-error">
+                  <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> Input with
+                    error</label>
+                  <input type="text" class="form-control" id="inputError" placeholder="Enter ...">
+                  <span class="help-block">Help block with error</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">
+                      Checkbox 1
+                    </label>
+                  </div>
+
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">
+                      Checkbox 2
+                    </label>
+                  </div>
+
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" disabled>
+                      Checkbox disabled
+                    </label>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                      Radio1
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                      Radio2
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                      Radio3
+                    </label>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Pick a Date and time:</label>
+                <div class="input-group date">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="datetimepicker">
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="components/select2/dist/js/select2.full.min.js"></script>
+<script src="components/input-mask/jquery.inputmask.js"></script>
+<script src="components/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="components/input-mask/jquery.inputmask.extensions.js"></script>
+<script src="components/moment/min/moment.min.js"></script>
+<script src="components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="components/timepicker/bootstrap-timepicker.min.js"></script>
+<script src="components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="components/fastclick/lib/fastclick.js"></script>
+<script src="assets/js/adminlte.min.js"></script>
+<script src="assets/js/demo.js"></script>
+<script src="https://rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/js/bootstrap-datetimepicker.min.js"></script>
+<script>
+  $(function () {
+    $('.select2').select2()
+    $('[data-mask]').inputmask()
+    $('#daterange').daterangepicker()
+    $('#timerange').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'MM/DD/YYYY hh:mm A' }})
+    $('#datepicker').datepicker({
+      autoclose: true,
+    });
+    $('#datetimepicker').datetimepicker({
+    defaultDate: new Date(),
+    format: 'MM/DD/YYYY H:mm:ss',
+    sideBySide: true
+});
+  })
+</script>
+</body>
+</html>

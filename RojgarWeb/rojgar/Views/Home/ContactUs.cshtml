@@ -1,0 +1,48 @@
+﻿@using Microsoft.Extensions.Configuration;
+@inject IConfiguration config;
+
+@{
+    Layout = null;
+    string AppTitle = config.GetValue<string>("Title");
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us - @AppTitle</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="~/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/assets/css/AdminLTE.css" rel="stylesheet" />
+    <link href="~/assets/css/allskin.css" rel="stylesheet" />
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="home-login-box">
+        <div class="container d-flex flex-column justify-content-center align-items-center mt-5">
+            @*<img src="~/images/Brand/logo2.png" style="width: 25rem; max-width: 100%; margin: 2rem 0;" alt="Contact us - @(AppTitle)" />*@
+            <h1 class="h4 font-weight-bold text-primary">Contact Us - APPLY MY FORM</h1>
+        </div>
+        <div class="container p-4">
+            <p class="text-justify">
+                Hi, I am Amit Kumar. I am from VPO Jhojhu Kalan, Charkhi Dadri. This
+                app is created to make form apply online process easy. For any Kind of Complaint or Suggestions Contact Us at <a href="tel:+919672920805">+91 9672920805</a>
+            </p>
+            <p>
+                Email: <a href="mailto:info@applymyform.in">info@applymyform.in</a>
+            </p>
+        </div>
+    </div>
+    <footer class="home-footer-box">
+        <a asp-controller="Home" asp-action="Index">Home</a><span class="mobile-hidden"> | </span>
+        <a asp-controller="Home" asp-action="AboutUs">About Us</a><span class="mobile-hidden"> | </span>
+        <a asp-controller="Home" asp-action="ContactUs">Contact Us</a><span class="mobile-hidden"> | </span>
+        <a asp-controller="Home" asp-action="PrivacyPolicy">Privacy Policy</a><span class="mobile-hidden"> | </span>
+        <a asp-controller="Home" asp-action="TermsAndConditions">Terms & Conditions</a><span class="mobile-hidden"> | </span>
+        <a asp-controller="Home" asp-action="RefundPolicy">Cancellation/Refund</a>
+    </footer>
+</body>
+</html>

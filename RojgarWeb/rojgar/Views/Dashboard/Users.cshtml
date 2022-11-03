@@ -1,0 +1,91 @@
+﻿@model IEnumerable<rojgar.Models.ApplicationUser>
+@{
+    ViewData["Title"] = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Users</h1>
+        <ol class="breadcrumb">
+            <li><a asp-controller="Dashboard" asp-action="Index"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="javascript:"><i class="fa fa-cogs"></i> Dashboard</a></li>
+            <li class="active">Users</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body">
+                        <div class="box-title">
+                            <div class="row">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+
+                                <div class="col-sm-12 text-center-mobileview">
+                                    <a asp-action="CreateJob" class="btn btn-success btn-color btn-add"><i class="material-icons">&#xE147;</i> <span>Add New</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="example1" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FullName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.UserName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Email)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                                    </th>                                 
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.FullName</td>
+                                        <td>@item.UserName</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.PhoneNumber</td>
+                                        <td>
+                                            @if (item.IsActive)
+                                            {
+                                                <span>Active</span>
+                                            }
+                                            else
+                                            {
+                                                <span>Inactive</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (item.IsActive)
+                                            {<a asp-controller="Dashboard" asp-action="EnableDisableUser" asp-route-id="@item.Id"><i class="color-one fa fa-unlock pr-2" title="Click to Lock"></i></a>}
+                                            else
+                                            {<a asp-controller="Dashboard" asp-action="EnableDisableUser" asp-route-id="@item.Id"><i class="color-one fa fa-lock pr-2" title="Click to Unlock"></i></a>}
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+@section Scripts{
+    <script>
+        highlightMenuItem("Manage", "Users");
+    </script>
+}

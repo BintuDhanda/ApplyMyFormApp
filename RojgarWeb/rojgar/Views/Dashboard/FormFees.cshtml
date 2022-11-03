@@ -1,0 +1,152 @@
+﻿@model IEnumerable<rojgar.Models.FormFees>
+
+@{
+    ViewData["Title"] = "FormFees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="display:flex; align-items:center;">
+    <a id="GoBackBtn" href="#" style="margin-right: 1rem;">
+        <h4>
+            <i class="fa fa-arrow-left"></i>
+            Go Back
+        </h4>
+    </a>
+    <h1>Form Fees</h1>
+</div>
+
+<p>
+    <a href="#" onclick="handleModal(0)">Create New</a>
+</p>
+<div asp-validation-summary="All" class="text-danger"></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Category
+            </th>
+            <th>
+                Form Fee
+            </th>
+            <th>
+                Form Filling Fee
+            </th>
+            <th>
+                Admit Card Fee
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FormFee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FormFillingFee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdmitCardFee)
+                </td>
+                <td>
+                    <a href="#" onclick=handleModal('@item.Id')>Edit</a> |
+                    <a href="#" onclick="handleDeleteModal('@item.Id')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Add Update Modal -->
+<div class="modal fade" id="AddUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" id="AddUpdateForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="AddUpdateModalLabel">Add Form Fees</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="Category" class="control-label">Category</label>
+                        <input name="Category" id="Category" class="form-control" placeholder="Category" />
+                    </div>
+                    <div class="form-group">
+                        <label for="FormFee" class="control-label">Form Fee</label>
+                        <input name="FormFee" id="FormFee" class="form-control" placeholder="Form Fee" />
+                    </div>
+                    <div class="form-group">
+                        <label for="FormFillingFee" class="control-label">Form Filling Fee</label>
+                        <input name="FormFillingFee" id="FormFillingFee" class="form-control" placeholder="Form Filling Fee" />
+                    </div>
+                    <div class="form-group">
+                        <label for="AdmitCardFee" class="control-label">Admit Card Fee</label>
+                        <input name="AdmitCardFee" id="AdmitCardFee" class="form-control" placeholder="Admit Card Fee" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+        highlightMenuItem("Manage", "Jobs");
+    </script>
+    <script>
+        $(document).ready(function () {
+            let jobId = localStorage.getItem("JobId")
+            $("#GoBackBtn").attr("href", "/Dashboard/JobPosts/" + jobId);
+        });
+        function handleModal(id) {
+            $("#EditId").remove()
+            $("#jobPostId").remove()
+            if (id) {
+                $("#AddUpdateModalLabel").html("Update Form Fees")
+                $.ajax({
+                    url: "/Dashboard/EditFormFee",
+                    type: "get",
+                    data: {
+                        id: id
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        $("#Category").val(response.category)
+                        $("#FormFee").val(response.formFee)
+                        $("#FormFillingFee").val(response.formFillingFee)
+                        $("#AdmitCardFee").val(response.admitCardFee)
+                    }
+                });
+                $("#AddUpdateForm").attr("action", "/Dashboard/EditFormFee")
+                $("#AddUpdateForm").append(`<input type="hidden" id="EditId" name="Id" value="${id}" />`)
+            } else {
+                $("#Category").val("")
+                $("#FormFee").val("")
+                $("#FormFillingFee").val("")
+                $("#AdmitCardFee").val("")
+                $("#EditId").remove()
+                $("#AddUpdateForm").attr("action", "/Dashboard/CreateFormFee")
+            }
+            let jobIdIndex = window.location.pathname.lastIndexOf("/")
+            let jobId = window.location.pathname.substring(jobIdIndex + 1)
+            $("#AddUpdateForm").append(`<input type="hidden" id="jobPostId" name="JobPostId" value="${jobId}" />`)
+            $("#AddUpdateModal").modal('show')
+        }
+        function handleDeleteModal(id) {
+            $("#DeleteBtn").attr("href", "/Dashboard/DeleteFormFee/" + id)
+            $("#DeleteModal").modal('show')
+        }
+    </script>
+}

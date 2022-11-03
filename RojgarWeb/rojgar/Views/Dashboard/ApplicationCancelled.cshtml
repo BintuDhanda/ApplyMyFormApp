@@ -1,0 +1,106 @@
+﻿@model IEnumerable<rojgar.Models.ApplicationHistory>
+
+@{
+    ViewData["Title"] = "Application History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Application Cancelled</h1>
+        <ol class="breadcrumb">
+            <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Admissions</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>                               
+                                    <th> @Html.DisplayNameFor(model => model.JobPost)</th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Category)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FormFee)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FormFillingFee)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.AdmitCardFee)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Status)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Remark)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.User)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TimeStamp)
+                                    </th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td data-label="Full Name">
+                                        @Html.DisplayFor(modelItem => item.JobPost.JobPostName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Category)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FormFee)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FormFillingFee)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AdmitCardFee)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Status)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Remark)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.User.FullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TimeStamp)
+                                    </td>
+                                    <td data-label="Actions">
+                                        <a class="edit" asp-action="ApplicationDetail" asp-route-id="@item.Id">Details</a>
+                                    </td>
+                                </tr>
+                                }
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+@section Scripts{
+    <script>
+        highlightMenuItem("Applications", "Cancelled");
+    </script>
+}

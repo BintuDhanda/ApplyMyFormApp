@@ -1,0 +1,368 @@
+
+@{ ViewData["Title"] = "Jobs";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+    <div class="content-wrapper" style="margin-left: 35px">
+        <section class="content-header">
+            <h1>Admissions</h1>
+            <ol class="breadcrumb">
+                <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Admissions</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-body">
+                            <table id="example1" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>                                  
+                                        <th>Sr. No.</th>
+                                        <th>Full Name</th>
+                                        <th>Mobile No.</th>
+                                        <th>E-mail Address</th>
+                                        <th>Admission Date</th>
+                                        <th>Course</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>                                     
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox_td">
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                <label for="checkbox1"></label>
+                                            </span>
+                                        </td>
+                                        <td data-label="Sr.No.">1</td>
+                                        <td data-label="Full Name">Mona Hardy</td>
+                                        <td data-label="Mobile No.">(171) 555-2222</td>
+                                        <td data-label="E-mail Address">thomashardy@mail.com</td>
+                                        <td data-label="Admission Date">29/10/1991</td>
+                                        <td data-label="Course">JEE</td>
+                                        <td data-label="Actions">
+                                            <a href="#editAdmissionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteAdmissionModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<div id="addAdmissionModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Admission</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile No.</label>
+                        <input type="text" class="form-control" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Admission Date:</label>
+                        <input type="text" class="form-control" id="datepicker">
+                    </div>
+                    <div class="form-group">
+                        <label>Course</label>
+                        <input type="text" class="form-control" id="course" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-color" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Edit Modal HTML -->
+<div id="editAdmissionModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Admission</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile No.</label>
+                        <input type="text" class="form-control" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Admission Date:</label>
+                        <input type="text" class="form-control" id="datepicker1">
+                    </div>
+                    <div class="form-group">
+                        <label>Course</label>
+                        <input type="text" class="form-control" id="course" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-color" value="Update">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Delete Modal HTML -->
+<div id="deleteAdmissionModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Admission</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete these Records?</p>
+                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

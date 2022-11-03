@@ -1,0 +1,311 @@
+﻿@model rojgar.Models.PersonalDetail
+
+@{
+    ViewData["Title"] = "PersonalDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>PersonalDetails</h1>
+        <ol class="breadcrumb">
+            <li><a asp-controller="Dashboard" asp-action="Index"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="javascript:"><i class="fa fa-cogs"></i> Dashboard</a></li>
+            <li class="active">PersonalDetails</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body">
+                        <div class="box-title">
+                            <div class="row">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="col-sm-5 text-center-mobileview">
+                                    <div>
+                                        <form method="post">
+                                            <div class="d-flex" style="display: flex">
+                                                <input class="form-control border" name="PhoneNumber" placeholder="Username" required />
+                                                <input type="submit" value="Search" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @if (Model != null)
+                        {
+                            <div>
+                                <dl class="">
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </dt>
+                                    @if (Model.Name == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.Name)
+                                        </dd>
+                                    }
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.FatherName)
+                                    </dt>
+                                    @if (Model.FatherName == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.FatherName)
+                                        </dd>
+                                    }
+
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.MotherName)
+                                    </dt>
+                                    @if (Model.MotherName == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.MotherName)
+                                        </dd>
+                                    }
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.Email)
+                                    </dt>
+                                    @if (Model.Email == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.Email)
+                                        </dd>
+                                    }
+
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                                    </dt>
+                                    @if (Model.PhoneNumber == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.PhoneNumber)
+                                        </dd>
+                                    }
+
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.AlternateNumber)
+                                    </dt>
+                                    @if (Model.AlternateNumber == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.AlternateNumber)
+                                        </dd>
+                                    }
+
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.AadhaarNumber)
+                                    </dt>
+                                    @if (Model.AadhaarNumber == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.AadhaarNumber)
+                                        </dd>
+                                    }
+
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.Gender)
+                                    </dt>
+                                    @if (Model.Gender == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.Gender)
+                                        </dd>
+                                    }
+
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.Address1)
+                                    </dt>
+                                    @if (Model.Address1 == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.Address1)
+                                        </dd>
+                                    }
+
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.Address2)
+                                    </dt>
+                                    @if (Model.Address2 == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.Address2)
+                                        </dd>
+                                    }
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.Country)
+                                    </dt>
+                                    @if (Model.Country == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.Country)
+                                        </dd>
+                                    }
+
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.State)
+                                    </dt>
+                                    @if (Model.State == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+
+
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.State)
+                                        </dd>
+                                    }
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.City)
+                                    </dt>
+                                    @if (Model.City == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+
+
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.City)
+                                        </dd>
+                                    }
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.PinCode)
+                                    </dt>
+                                    @if (Model.PinCode == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+
+
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.PinCode)
+                                        </dd>
+                                    }
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.LandMark)
+                                    </dt>
+                                    @if (Model.LandMark == "null")
+                                    {
+                                        <dd class="col-lg-8">
+                                            No Data Available
+                                        </dd>
+                                    }
+                                    else
+                                    {
+
+
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.LandMark)
+                                        </dd>
+                                    }
+
+                                    <dt class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.TimeStamp)
+                                    </dt>
+                                 
+                                            
+                                   
+                                 
+                                        <dd class="col-lg-8">
+                                            @Html.DisplayFor(model => model.TimeStamp)
+                                        </dd>
+                                    
+
+                                </dl>
+                            </div>
+                           
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+@section Scripts{
+    <script>
+        highlightMenuItem("Manage", "Personal Details");
+    </script>
+}

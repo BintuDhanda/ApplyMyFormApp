@@ -1,0 +1,140 @@
+﻿@model IEnumerable<rojgar.Models.ApplicationHistory>
+
+@{
+    ViewData["Title"] = "Application History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Application Completed</h1>
+        <ol class="breadcrumb">
+            <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Application Completed</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.JobPost)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Category)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FormFee)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FormFillingFee)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.AdmitCardFee)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Status)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Remark)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.User)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TimeStamp)
+                                    </th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.JobPost.JobPostName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Category)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FormFee)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FormFillingFee)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AdmitCardFee)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Status)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Remark)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.User.FullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TimeStamp)
+                                    </td>
+                                    <td>
+                                        <a href="#" onclick="handleUploadAdmitCardId(@item.Id)" data-toggle="modal" data-target="#UploadAdmitCardModal">Upload Admit Card</a> |
+                                        <a asp-action="ApplicationDetail" asp-route-id="@item.Id">Details</a> 
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<div class="modal fade" id="UploadAdmitCardModal" tabindex="-1" role="dialog" aria-labelledby="UploadAdmitCardModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form asp-controller="Dashboard" asp-action="UploadAdmitCard" enctype="multipart/form-data">
+                <input type="hidden" id="ApplicationId" name="Id" />
+                <div class="modal-header">
+                    <h5 class="modal-title" id="UploadAdmitCardModalLabel">Upload Admit Card</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="AdmitCard" class="control-label">Admit Card</label>
+                        <input type="file" id="AdmitCard" name="AdmitCard" class="form-control" placeholder="Admit Card" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        highlightMenuItem("Applications", "Completed");
+    </script>
+    <script>
+        function handleUploadAdmitCardId(id) {
+            $("#ApplicationId").val(id)
+        }
+    </script>
+}

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\mande\Desktop\Rojgar\RojgarWeb\rojgar\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2022-06-08T12:08:18.4428326Z;True|2022-05-18T18:03:36.4027155+05:30;True|2022-05-10T16:17:20.4804308+05:30;True|2022-05-10T13:21:32.4372962+05:30;True|2022-05-09T00:03:59.1931130+05:30;True|2022-05-07T18:15:44.3792141+05:30;False|2022-05-07T18:06:44.1300303+05:30;True|2022-05-06T13:47:46.8345225+05:30;True|2022-03-04T14:29:23.2708501+05:30;True|2022-03-04T14:28:58.9766775+05:30;True|2022-03-04T13:53:29.2350198+05:30;True|2022-03-04T13:49:04.7127817+05:30;True|2022-03-03T11:20:57.9156204+05:30;True|2022-03-03T11:10:00.5230045+05:30;True|2022-03-03T10:50:20.6544255+05:30;True|2022-03-03T10:07:26.1077905+05:30;True|2022-03-03T09:54:49.7388430+05:30;True|2022-03-02T16:03:10.3887646+05:30;True|2022-03-02T15:41:26.2660061+05:30;True|2022-03-01T16:56:17.4702512+05:30;True|2022-03-01T16:48:17.2755616+05:30;</History>
+  </PropertyGroup>
+</Project>

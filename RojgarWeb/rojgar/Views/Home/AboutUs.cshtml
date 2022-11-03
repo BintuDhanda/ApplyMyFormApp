@@ -1,0 +1,65 @@
+﻿@using Microsoft.Extensions.Configuration;
+@inject IConfiguration config;
+
+@{
+    Layout = null;
+    string AppTitle = config.GetValue<string>("Title");
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us - @AppTitle</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="~/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/assets/css/AdminLTE.css" rel="stylesheet" />
+    <link href="~/assets/css/allskin.css" rel="stylesheet" />
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container d-flex flex-column justify-content-center align-items-center mt-5">
+        @*<img src="~/images/Brand/logo2.png" style="width: 25rem; max-width: 100%; margin: 2rem 0;" alt="About us - @(AppTitle)" />*@
+        <h1 class="h4 font-weight-bold text-primary">About Us - APPLY MY FORM</h1>
+    </div>
+    <div class="container p-4">
+        <p class="text-justify">
+            ApplyMyForm is founded by Mr. Amit Kumar. This App is created to make
+            Form Apply Process easy for everyone. On this platform anybody can
+            check latest Job Notifications,can Apply and Get Admit Card.
+        </p>
+        <p class="text-justify">
+            We make it easy for you. Follow these steps :-
+        </p>
+        <p class="text-justify">
+            1. Select Job You want to Apply
+        </p> <p class="text-justify">
+    2. Click on Apply
+</p> <p class="text-justify">
+    3. Select The Post for You want to apply. You can select one or more
+    post.
+</p> <p class="text-justify">
+    4. Pay The fee that includes Application Fee + Form Filling Fee +
+    Admit Card (If Applicable).
+</p>
+     <p class="text-justify">
+         5. Done. Now our team will apply your form on behalf of you.
+     </p>
+     <p class="text-justify">
+         Hi, I am Amit Kumar. I am from VPO Jhojhu Kalan, Charkhi Dadri. This
+         app is created to make form apply online process easy. Thank You...
+     </p>
+    </div>
+    <footer class="home-footer-box">
+        <a asp-controller="Home" asp-action="Index">Home</a><span class="mobile-hidden"> | </span>
+        <a asp-controller="Home" asp-action="AboutUs">About Us</a><span class="mobile-hidden"> | </span>
+        <a asp-controller="Home" asp-action="ContactUs">Contact Us</a><span class="mobile-hidden"> | </span>
+        <a asp-controller="Home" asp-action="PrivacyPolicy">Privacy Policy</a><span class="mobile-hidden"> | </span>
+        <a asp-controller="Home" asp-action="TermsAndConditions">Terms & Conditions</a><span class="mobile-hidden"> | </span>
+        <a asp-controller="Home" asp-action="RefundPolicy">Cancellation/Refund</a>
+    </footer>
+</body>
+</html>

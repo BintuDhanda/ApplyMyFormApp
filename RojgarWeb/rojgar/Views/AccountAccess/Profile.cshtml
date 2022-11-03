@@ -1,0 +1,97 @@
+﻿@model rojgar.Models.ApplicationUser;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container mt-4 pt-5 mb-4">
+    <form method="post" enctype="multipart/form-data">
+        <label class="h5">Personal Details</label>
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-3 col-12 justify-content-center d-flex flex-column">
+                <div class="form-element">
+                    <script>
+                        function onImageClick() {
+                            document.getElementById('imageFile').click()
+                        }
+                    </script>
+                    <img id="imageFileSrc" src="~/ProfileImages/@Model.ImageUrl" onclick="onImageClick()" width="200" height="200" class="" />
+                    <div class="custom-file">
+                        <input type="file" name="Image" class="custom-file-input" onchange="document.getElementById('imageFileSrc').src = window.URL.createObjectURL(this.files[0])" id="imageFile" required>
+                        @*<label class="custom-file-label" for="imageFile">
+                                Choose file...
+                            </label>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-12">
+                <div class="form-group">
+                    <label for="">Full Name</label>
+                    <input value="@Model.FullName" asp-for="FullName"
+                           type="text"
+                           class="form-control"
+                           placeholder="Full Name"
+                           required />
+                </div>
+                <div class="form-group">
+                    <label for="">Phone Number</label>
+                    <input value="@Model.PhoneNumber" asp-for="PhoneNumber"
+                           type="text"
+                           class="form-control"
+                           placeholder="Phone Number"
+                           required />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input value="@Model.Email"
+                   asp-for="Email"
+                   type="text"
+                   class="form-control"
+                   placeholder="Email"
+                   required />
+        </div>
+        <div class="form-group">
+            <label for="">Username</label>
+            <input value=""
+                   asp-for="UserName"
+                   disabled
+                   type="text"
+                   class="form-control"
+                   placeholder="Username"
+                   required />
+        </div>
+
+        <div class="form-group">
+            <label for="">Address</label>
+            <input value="@Model.Address" asp-for="Address"
+                   type="text"
+                   class="form-control"
+                   placeholder="Address"
+                   required />
+        </div>
+        <label class="h5 color-one">
+            Change Password (Enter password details if you wish to change password)
+        </label>
+        <div class="form-group">
+            <label for="">Old Password</label>
+            <input value=""
+                   asp-for="OldPassword"
+                   type="password"
+                   class="form-control"
+                   placeholder="Old Password" />
+        </div>
+        <div class="form-group">
+            <label for="">New Password</label>
+            <input value="" asp-for="NewPassword"
+                   type="password"
+                   class="form-control"
+                   placeholder="New Password" />
+        </div>
+        <button type="submit"
+                class="btn btn-primary text-white color-bg-one color-border-one button-hover">
+            Save
+        </button>
+    </form>
+</div>
+

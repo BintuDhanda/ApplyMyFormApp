@@ -1,0 +1,115 @@
+﻿@model IEnumerable<rojgar.Models.Job>
+
+@{
+    ViewData["Title"] = "Jobs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Jobs</h1>
+        <ol class="breadcrumb">
+            <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Jobs</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body">
+                        <div class="box-title">
+                            <div class="row">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+
+                                <div class="col-sm-12 text-center-mobileview">
+                                    <a asp-action="CreateJob" class="btn btn-success btn-color btn-add"><i class="material-icons">&#xE147;</i> <span>Add New</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="example1" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.JobName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.AdvtNumber)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.JobPublishDate)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.JobStartDate)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.JobEndDate
+                                   )
+                                    </th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                    <th>Job Posts</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.JobName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AdvtNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.JobPublishDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.JobStartDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.JobEndDate)
+                                    </td>
+                                    <td>
+                                        @if (item.IsActive)
+                                        {
+                                            <span>Active</span>
+                                        }
+                                        else
+                                        {
+                                            <span>Inactive</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <a asp-action="EditJob" asp-route-id="@item.JobId">Edit</a> |
+                                        <a asp-action="JobDetail" asp-route-id="@item.JobId">Details</a> |
+                                        @if (item.IsActive)
+                                        {
+                                            <a asp-action="EnableDisableJob" asp-route-id="@item.JobId">Disable</a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="EnableDisableJob" asp-route-id="@item.JobId">Enable</a>
+                                        }
+                                    </td>
+                                    <td><a asp-action="JobPosts" asp-route-id="@item.JobId">Job Posts</a></td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+@section Scripts{
+    <script>
+        highlightMenuItem("Manage", "Jobs");
+    </script>
+}

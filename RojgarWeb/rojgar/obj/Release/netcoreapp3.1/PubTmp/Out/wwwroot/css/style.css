@@ -1,0 +1,90 @@
+﻿
+
+.nav-color {
+    background-color: #00172e !important
+}
+
+.treeview-menu {
+    margin-left: 23px !important;
+}
+.comment-container{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 2rem 0.5rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 2px black;
+    background: white
+}
+.comment-username{
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+.comment-comment{
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+}
+.comment-date{
+    font-size: 1rem;
+}
+.course-links-container{
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    align-items: center;
+    padding: 1rem 1rem;
+}
+.course-link-tabs{
+    background: #fefefe;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    border-radius: 16px;
+    box-shadow: 0 0 3px black;
+}
+
+.home-login-box{
+    min-height: calc(100% - 3rem);
+}
+.home-footer-box{
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.home-footer-box > a{
+    font-size: 1rem;
+}
+@media only screen and (max-width: 768px){
+    .home-login-box{
+        min-height: auto;
+        margin-top: 2rem!important;
+    }
+    .home-footer-box{
+        margin-top: 4rem;
+        height: auto;
+        flex-direction: column;
+    }
+    .mobile-hidden{
+        display: none;
+    }
+}
+
+
+/* Highlight Sub Menu Start */
+
+.treeview-menu {
+    margin-left: 10px !important;
+}
+
+.submenu-link {
+    border-left: 3px solid transparent;
+}
+
+    .submenu-link.active {
+        background: #0000004f !important;
+        border-left: 3px solid white !important;
+    }
+
+/* Highlight Sub Menu End */

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<rojgar.Models.Qualification>
+
+@{
+    ViewData["Title"] = "Qualification Documents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Documents</h1>
+        <ol class="breadcrumb">
+            <li><a asp-controller="Dashboard" asp-action="Index"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="javascript:"><i class="fa fa-cogs"></i> Dashboard</a></li>
+            <li class="active">Documents</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body">
+                        <div class="box-title">
+                            <div class="row">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="col-sm-5 text-center-mobileview">
+                                    <div>
+                                        <form method="post">
+                                            <div class="d-flex" style="display: flex">
+                                                <input class="form-control border" name="PhoneNumber" placeholder="Username" required />
+                                                <input type="submit" value="Search" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </th>
+                                    <th>
+                                        File
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.User)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TimeStamp)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Name)
+                                            </td>
+                                            <td>
+                                                <a target="_blank" href="/Documents/@Html.DisplayFor(modelItem => item.FileUrl)">View</a>
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.User.FullName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TimeStamp)
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section Scripts{
+    <script>
+        highlightMenuItem("Documents", "Qualification");
+    </script>
+}

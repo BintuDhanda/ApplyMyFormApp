@@ -1,0 +1,104 @@
+﻿@model IEnumerable<rojgar.Models.PaymentHistory>
+
+@{
+    ViewData["Title"] = "PaymentHistories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Payment Histories</h1>
+        <ol class="breadcrumb">
+            <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Payment Histories</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body">
+                        <div class="box-title">
+                            <div class="row">
+                                <div class="col-sm-12 text-center-mobileview">
+                                    <a asp-action="Create" class="btn btn-success btn-color btn-add"><i class="material-icons">&#xE147;</i> <span>Add New</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="example1" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TransactionId)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.OrderId)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.PaymentMode)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Amount)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Status)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.User)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.User.PhoneNumber)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TimeStamp)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TransactionId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.OrderId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PaymentMode)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Amount)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Status)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.User.FullName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.User.PhoneNumber)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TimeStamp)
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+@section Scripts{
+    <script>
+        highlightMenuItem("Applications", "Payment History");
+    </script>
+} 

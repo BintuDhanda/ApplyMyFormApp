@@ -1,0 +1,159 @@
+﻿@model IEnumerable<rojgar.Models.JobPost>
+
+@{
+    ViewData["Title"] = "Job Posts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="display:flex; align-items:center;">
+    <a href="/Dashboard/Jobs" style="margin-right: 1rem;">
+        <h4>
+            <i class="fa fa-arrow-left"></i>
+            Go Back
+        </h4>
+    </a>
+    <h1>Job Posts</h1>
+</div>
+
+<p>
+    <a href="#" onclick="handleModal(0)">Create New</a>
+</p>
+<div asp-validation-summary="All" class="text-danger"></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Post Name
+            </th>
+            <th>
+                Number of Posts
+            </th>
+            <th>
+                Job Post Gender
+            </th>
+            <th>Action</th>
+            <th>Form Fees</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobPostName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfPost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobPostGender)
+                </td>
+                <td>
+                    <a href="#" onclick=handleModal('@item.JobPostId')>Edit</a> 
+                    |
+                    @*<a href="#" onclick="handleDeleteModal('@item.JobPostId')">Delete</a>*@
+                </td>
+                <td><a asp-action="FormFees" asp-route-id="@item.JobPostId">Form Fees</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Add Update Modal -->
+<div class="modal fade" id="AddUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" id="AddUpdateForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="AddUpdateModalLabel">Add Job Post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="JobPostName" class="control-label">Job Post Name</label>
+                        <input name="JobPostName" id="JobPostName" class="form-control" placeholder="Job Post Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="JobPostGender" id="JobPostGender" class="control-label">Job Post Gender</label>
+                        <select name="JobPostGender" class="form-control" required>
+                            <option value="">
+                                -- Select --
+                            </option>
+                            <option value="Male">
+                                Male
+                            </option>
+                            <option value="Female">
+                                Female
+                            </option>
+                            <option value="Male/Female">
+                                Male/Female (Both)
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="NumberOfPost" class="control-label">Number of Post</label>
+                        <input name="NumberOfPost" id="JobPostName" class="form-control" placeholder="Number of Post" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+        highlightMenuItem("Manage", "Jobs");
+    </script>
+    <script>
+        function handleModal(id) {
+            $("#EditId").remove()
+            $("#jobId").remove()
+            if (id) {
+                $("#AddUpdateModalLabel").html("Update Job Post")
+                $.ajax({
+                    url: "/Dashboard/EditJobPost",
+                    type: "get",
+                    data: {
+                        id: id
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        $("#JobPostName").val(response.jobPostName)
+                        $("#NumberOfPost").val(response.numberOfPost)
+                        $("#JobPostGender").val(response.jobPostGender)
+                    }
+                });
+                $("#AddUpdateForm").attr("action", "/Dashboard/EditJobPost")
+                $("#AddUpdateForm").append(`<input type="hidden" id="EditId" name="JobPostId" value="${id}" />`)
+            } else {
+
+                $("#JobPostName").val("")
+                $("#NumberOfPost").val("")
+                $("#JobPostGender").val("")
+                $("#EditId").remove()
+                $("#AddUpdateForm").attr("action", "/Dashboard/CreateJobPost")
+            }
+            let jobIdIndex = window.location.pathname.lastIndexOf("/")
+            let jobId = window.location.pathname.substring(jobIdIndex + 1)
+            $("#AddUpdateForm").append(`<input type="hidden" id="jobId" name="JobId" value="${jobId}" />`)
+            $("#AddUpdateModal").modal('show')
+        }
+        function handleDeleteModal(id) {
+            $("#DeleteBtn").attr("href", "/Dashboard/DeleteJobPost/" + id)
+            $("#DeleteModal").modal('show')
+        }
+        // handle JobId For Come Back From Form Fees //
+        $(document).ready(function () {
+            let jobIdIndex = window.location.pathname.lastIndexOf("/")
+            let jobId = window.location.pathname.substring(jobIdIndex + 1)
+            localStorage.setItem("JobId", jobId)
+        });
+    </script>
+}
